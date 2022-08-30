@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact name="Ipadel">
+    <output-path>$PROJECT_DIR$/out/artifacts/Ipadel</output-path>
+    <root id="root">
+      <element id="artifact" artifact-name="index_html" />
+    </root>
+  </artifact>
+</component>

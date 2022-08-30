@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPadel</title>
+    
+    <link rel="stylesheet" href="CSS/generales.css">
+    <link rel="stylesheet" href="CSS/pruebadinamica.css">
+    
+    <script src="JS/javascriptApi.js"></script>
+    
+     
+</head>
+<body>
+  <audio  controls >
+    <source src="media/audios/Bella_Ciao.mp3" type="audio/mp3">
+        
+</audio>
+      <div id="contenedor">
+
+          <header>
+
+               <div class="titulo">
+                   <h1>IPadel</h1></div>
+                   <div class="subtitulo">
+                   <h2>Tu Padel. Mi Padel.</h2></div>
+          </header>
+
+          <nav id="navbar">
+             <ul class="menu">
+                 <li><a href="index.html">Home</a></li>
+                 <li><a href="IPalas.html">IPalas</a></li>
+                 <li><a href="IZapatillas.html">IZapatillas</a></li>
+                 <li><a href="IPaleteros.html">IPaleteros</a></li>
+                 <li><a href="Historia.html">Historia</a></li>
+                 <li><a href="Contacto.html">Contacto</a></li>
+             </ul>
+          </nav>
+          <main class="main">
+
+           <div class="formulario">
+            <form name="alta" action="insertar" method="post">
+                <ul>
+                    <h3>
+                        Formulario Registro
+                    </h3>
+                     <input type="hidden" name="id" value="0">
+                     <input type="hidden" name="opcion" value="1">
+                     
+                    <li><label>Nombre:</label><input type="text" id="nombre" name="nombre" required autofocus placeholder="Nombre"></li>
+                    <li><label>Apellidos:</label><input type="text" id="apellidos" name="apellidos" required placeholder="apellidos"></li>
+                    <li><label>Contraseña:</label><input type="password" id="contrasena" name="contraseña" required placeholder="contraseña"></li>
+                    <li><label>E-mail:</label><input type="email" id="email" name="mail"  required placeholder="xxxxx@xxxx.xxx"></li>
+                    <li><label>Dni:</label><input type="text" id="dni" name="dni"  required placeholder="xxxxxxxx-A"></li>
+                    <li><label>Contacto:</label><input type="text" id="contacto" name="contacto" required placeholder="contacto"></li>
+                    <li><label>Aceptar Condiciones:</label><input type="checkbox" id="condiciones" name="aceptarcondiciones"  value="1" ></li>           
+                    <li><label>Nacionalidad:</label>
+                                  <select name="Nacionalidad" class="form-label">
+     
+                                      <option value="1" selected>España</option>
+                                      <option value="2">Francia</option>
+                                      <option value="3">Portugal</option>
+                                      <option value="4">Inglaterra</option>
+                                      <option value="5">Alemania</option>
+                                      <option value="7">Italia</option>
+                                      <option value="8">EEUU</option>
+                                      <option value="9">Argentina</option>
+                                      <option value="10">China</option>
+                                  </select>
+                    </li>
+                   
+                   <button type="submit" id="btFormu" class="btn btn-primary">Enviar</button>
+                  
+                </ul>   
+                
+                 
+                 
+            </form>
+            <div class="mapa">
+                <iframe class="mapa2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.686290912653!2d2.1206311147967156!3d41.38090000436138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a498f576297baf%3A0x44f65330fe1b04b9!2sCamp%20Nou!5e0!3m2!1ses!2ses!4v1653469881740!5m2!1ses!2ses" 
+                width="600" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div> 
+            <div class="direccion">
+                <p>C. d'Arístides Maillol, 12, 08028 Barcelona , tel:900900900</p>
+            </div>
+
+           
+           </div>
+            <section class="cont__main">
+                
+    
+                <div id="us" class="cont users ">
+                    <h3>Registros</h3>
+    
+                </div>
+                <div  class="person_card ocultar"></div>
+                <div class="cartaindividual ocultar"></div>
+    
+            
+            </section>
+    
+            <template id="temp_card">
+                 
+                    <div class="card">
+                        <span class="s_nom">Nombre: </span>
+                        <span class="nom">Dinamic</span>
+                        <span class="s_apell">Apellido: </span>
+                        <span class="Apellido">Dinamic</span>
+                        <button class="botoninfo">+Info</button>
+
+                    </div>
+                
+            </template>
+    
+    
+            <template id="temp_us">
+                <div class="card_us">
+                    <div class="div_unit div_nom">
+                        <span class="s1_nom">Nombre:</span>
+                        <span class="nom1">dinamic</span>
+                    </div>
+                    <div class="div_unit div_apll">
+                        <span class="s_apll">Apellido:</span>
+                        <span class="apll">dinamic</span>
+                    </div>
+                    <div class="div_unit div_email">
+                        <span class="s1_email">Email:</span>
+                        <span class="email">dinamic</span>
+                    </div>
+                    <div class="div_unit div_pais">
+                        <span class="s1_pais">Pais:</span>
+                        <span class="pais1">dinamic</span>
+                    </div>
+                    <div class="div_unit div_fch">
+                        <span class="s_reg">Fecha de registro:</span>
+                        <span class="reg">dinamic</span>
+                    </div>
+                    <button class="back">Volver</button>
+                    <button class="Modi">Modificar</button>
+                    <button class="Eli">Eliminar</button>
+                </div>
+            </template>
+            
+        </main>
+
+
+          <aside>
+            <div class="anuncios">
+              <p>Aqui van anuncios</p>
+          </div>
+          <div class="construccion">
+             <p>Seguimos en Construccion...</p>
+             <img src="media/img/obra0033.gif" alt="obra"> 
+
+          </div>
+          </aside>
+
+
+
+      </div>
+    </body>
+    </html>

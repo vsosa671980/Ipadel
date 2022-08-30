@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="index_html">
+    <output-path>$PROJECT_DIR$/out/artifacts/index_html</output-path>
+    <root id="root">
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/index.html" />
+    </root>
+  </artifact>
+</component>

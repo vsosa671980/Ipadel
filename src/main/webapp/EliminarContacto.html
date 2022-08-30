@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPadel</title>
+    
+    <link rel="stylesheet" href="CSS/generales.css">
+    <link rel="stylesheet" href="CSS/Modificarcontacto.css">
+   
+    
+     <script>
+            window.onload = function() {
+                console.log("cargada");
+                document.querySelector("#btEliminarBD").addEventListener("click",() => {validar()});
+
+                function validar() {
+
+                    let ok = true;
+                    if (document.querySelector("#nombre").value == "") {
+                        ok = false;
+                        result = window.prompt("El campo no puede estar vacio");
+                    }
+                    
+                    if (document.querySelector("#apellidos").value == "") {
+                        ok = false;
+                    }
+                    
+                    if (document.querySelector("#contraseña").value == "") {
+                        ok = false;
+                    }
+                    
+                    if (document.querySelector("#email").value == "") {
+                        ok = false;
+                    }
+                    
+                    if (document.querySelector("#dni").value == "") {
+                        ok = false;
+                    }
+                    
+                    if (document.querySelector("#contacto").value == "") {
+                        ok = false;
+                    }
+                    
+                    if (document.querySelector("#nacionalidad").value == "") {
+                        ok = false;
+                    }
+                    
+                    
+
+                    if (ok) {
+                        document.querySelector("form").submit();
+                        console.log("Enviado");
+                    }
+
+
+                }
+            }
+        </script>
+    
+     
+</head>
+<body>
+  <audio  controls >
+    <source src="media/audios/Bella_Ciao.mp3" type="audio/mp3">
+        
+</audio>
+      <div id="contenedor">
+
+          <header>
+
+               <div class="titulo">
+                   <h1>IPadel</h1></div>
+                   <div class="subtitulo">
+                   <h2>Tu Padel. Mi Padel.</h2></div>   
+                   
+                  
+          </header>
+
+          <nav id="navbar">
+             <ul class="menu">
+                 <li><a href="index.html">Home</a></li>
+                 <li><a href="IPalas.html">IPalas</a></li>
+                 <li><a href="IZapatillas.html">IZapatillas</a></li>
+                 <li><a href="IPaleteros.html">IPaleteros</a></li>
+                 <li><a href="Historia.html">Historia</a></li>
+                 <li><a href="Contacto.html">Contacto</a></li>
+             </ul>
+          </nav>
+          <main class="main">
+
+           <div class="formulario">
+            <form name="alta" action="Formulario" method="post">
+                <ul>
+                    <h3>
+                        Eliminar Registro
+                    </h3>
+                     <input type="hidden" name="id" value="0">
+                     <input type="hidden" name="opcion" value="1">
+                     
+                    <li><label>Nombre:</label><input type="text" id="nombre" name="nombre" required autofocus placeholder="Nombre"></li>
+                    <li><label>Apellidos:</label><input type="text" id="apellidos name="apellidos" required placeholder="apellidos"></li>
+                    <li><label>Contraseña:</label><input type="password" id="contrasena" name="contraseña" required placeholder="contraseña"></li>
+                    <li><label>E-mail:</label><input type="email" id="email" name="mail"  required placeholder="xxxxx@xxxx.xxx"></li>
+                    <li><label>Dni:</label><input type="text" id="dni" name="dni"  required placeholder="xxxxxxxx-A"></li>
+                    <li><label>Contacto:</label><input type="text" id="contacto" name="contacto" required placeholder="contacto"></li>
+                    <li><label>Aceptar Condiciones:</label><input type="checkbox" id="condiciones" name="aceptarcondiciones" value="1" ></li>           
+                    <li><label>Nacionalidad:</label>
+                                  <select name="Nacionalidad" class="form-label">
+     
+                                      <option value="1" selected>España</option>
+                                      <option value="2">Francia</option>
+                                      <option value="3">Portugal</option>
+                                      <option value="4">Inglaterra</option>
+                                      <option value="5">Alemania</option>
+                                      <option value="7">Italia</option>
+                                      <option value="8">EEUU</option>
+                                      <option value="9">Argentina</option>
+                                      <option value="10">China</option>
+                                  </select>
+                    </li>
+                  
+                    
+                    <button type="button" id="btEliminarBD"class="btn btn-primary">Eliminar</button>
+                    
+                    <button onclick="location.href='Contacto.html'" id="btVolverContacto">Volver</button>
+
+                    
+                </ul>   
+                 
+            </form>
+          </div>
+            
+                <div class="Modificarpersona">
+                    <p>Esta feo esto de eliminar ehhh....</p>
+                    <img src="media/img/lisa.gif" alt="lisa">
+                   
+                </div>
+            
+    
+            
+        </main>
+
+
+          <aside>
+            <div class="anuncios">
+              <p>Aqui van anuncios</p>
+          </div>
+          <div class="construccion">
+             <p>Seguimos en Construccion...</p>
+             <img src="media/img/obra0033.gif" alt="obra"> 
+
+          </div>
+          </aside>
+          <footer>
+              <div class="piepagina">
+            <p>Creado por L.Roche</p>
+
+          </footer>
+
+
+      </div>
+      <script>
+           //quiero hacer un fetch!!! Dani ayuda!!!!!!!!!!
+      
+      let Persona;     
+      let xhr = new XMLHttpRequest();
+      
+      xhr.onreadystatechange = function () {
+    //pregunto si ha llegado al estado 4 (llegado)	  
+    if (xhr.readyState === 4){
+    	//pregunto si esta en estado 200(sin errores)
+        if (xhr.status === 200) {
+        	
+           Persona = JSON.parse(xhr.responseText);
+          
+          Persona.forEach(Personas=>{
+        	  console.log(Personas)
+          })
+        	  
+          
+            
+        }else{
+        	// aqui por si hay errores.
+            popUp(3, "Algo ha ido mal.")
+        }
+    }
+};
+     xhr.open("POST", "ListarPersona", false);
+     xhr.setRequestHeader("Content-Type", "application/json");
+     xhr.send()
+      
+      </script>
+      
+      
+    </body>
+    </html>

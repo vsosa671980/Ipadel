@@ -1,0 +1,48 @@
+.Historia{
+
+    width: 100%;
+    height: auto;
+    border: 1px solid rgb(94, 0, 131);
+}
+.Historia p{
+    font-size: 15px;
+    color:rgb(94, 0, 131);
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+h2{
+   padding: 20px;
+   text-align: center;
+   font-size: 25px;
+   color:rgb(94, 0, 131);
+   font-family: Arial, Helvetica, sans-serif;
+
+}
+h3{
+   font-size: 20px;
+   color:rgb(94, 0, 131);
+   font-family: Arial, Helvetica, sans-serif;
+   margin-left: 20px;
+   margin-right: 20px;
+}
+.fotoPortada{
+    position: relative;
+    width: 1200px;
+    height: 400px;
+   
+    
+}
+.fotoPortada img{
+    position: absolute; 
+    max-width: 100%;
+    max-height: 100%;
+    width:1200px;
+    top: 20px;
+    right: 0; /* se debe usar para que margin 0 auto funcione */
+    left: 0px; /* se debe usar para que margin 0 auto funcione */
+    margin: 0px auto; /* Esto lo centra */
+   margin-bottom: 20px;
+   
+
+}
